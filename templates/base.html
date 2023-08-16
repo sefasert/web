@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>{% block title %}{% endblock %}</title>
+<meta name="description" content="{% block description %}Adres: 100. Yıl Mah. 2154. Sok. No:3 Bağcılar/İstanbul - Telefon: (0545)197-3471 2.el tv, tv kartı, kumanda, tv ayağı, tv aparatı ve tv ürünlerinin satıldığı-tamir edildiği yer{% endblock %}">
+<meta name="keywords" content="{% block keywords %}engin elektronik,engin elektronik bağcılar,engin elektronik istanbul,tv anakart,tv besleme kart,tv tcon,samsung anakart,lg anakart,sunny anakart,vestel anakart,2.el tv, tv tamir{% endblock %}">
+<meta name="robots" content="{% block robots %}all{% endblock %}">
+<meta name="google-site-verification" content="6L2RD__lUdlr8X2lTzgKzJfS6nDDCbCe6DoskQGwL1c" />
+<link href="{% static 'images/favicon.ico' %}" rel="shortcut icon" type="image/x-icon" />
+<link rel="canonical" href="{{ CANONICAL_PATH }}" />
+<!-- bootstrap css -->
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" />
+<!-- jQuery js -->
+<link href="{% static 'css/jquery-ui.min.css' %}" rel="stylesheet" type="text/css" />
+<script src="{% static 'js/jquery-2.0.0.min.js' %}" type="text/javascript"></script>
+<!-- Bootstrap4 js-->
+<script src="{% static 'js/bootstrap.bundle.min.js' %}" type="text/javascript"></script>
+<!-- tailwind-flowbite -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.6/flowbite.min.js" defer></script>
+<!-- responsive-ui-inter -->
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+<link href="{% static 'css/ui.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'css/responsive.css' %}" rel="stylesheet" media="only screen and (max-width: 1200px)"/>
+<!-- HTMX -->
+<script src="https://unpkg.com/htmx.org@1.9.4"></script>
+</head>
+<body>
+{% include "includes/navbar.html" %}
+  {% block content %}
+    {% endblock %}
+{% include "includes/footer.html" %}
+
+<!-- auto complete -->
+<script src="{% static 'js/jquery-ui.min.js' %}" defer></script>
+<script>
+$(function() {
+  $("#anahtar").autocomplete({
+    delay: 0,
+    minLength: 2,
+    source: "{% url 'otoyazi'  %}",
+    select: function(event, ui) {
+      var categorySlug = ui.item.category_slug;
+      var productSlug = ui.item.product_slug;
+      var url = '/category/' + categorySlug + '/' + productSlug + '/';
+      window.location.href = url;
+    }
+  });
+});
+</script>

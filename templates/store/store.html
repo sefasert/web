@@ -1,0 +1,521 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+{% if categories.category_name %}
+{{ categories.category_name }} - {{ setting.title }}
+{% elif search_query %}
+{{ search_query }} "{{ product_count }}" sonuç - Engin Elektronik
+{% else %}
+
+{% with selected_brand=myFilter.form.brand.value %}
+{% with selected_category=myFilter.form.category.value %}
+
+		{% if selected_brand == "AWOX" %}
+		Marka:"Awox"
+		{% elif selected_brand == "SONY" %}
+		Marka:"Sony"
+		{% elif selected_brand == "SAMSUNG" %}
+		Marka:"Samsung"
+		{% elif selected_brand == "SUNNY" %}
+		Marka:"Sunny"
+		{% elif selected_brand == "BOE" %}
+		Marka:"BOE"
+		{% elif selected_brand == "LG" %}
+		Marka:"LG"
+		{% elif selected_brand == "TOSHIBA" %}
+		Marka:"Toshiba"
+		{% elif selected_brand == "AUO" %}
+		Marka:"Auo"
+		{% elif selected_brand == "VESTEL" %}
+		Marka:"Vestel"
+		{% elif selected_brand == "Arçelik-Beko-Grundig" %}
+		Marka:"Arçelik-Beko-Grundig"
+		{% elif selected_brand == "DIJITSU" %}
+		Marka:"Dijitsu"
+		{% elif selected_brand == "SANYO-NORDMENDE" %}
+		Marka:"Sanyo-Nordmende"
+		{% elif selected_brand == "SUNNY-AXEN-WOON-SHEEN" %}
+		Marka:"Sunny-Axen-Woon-Sheen"
+		{% elif selected_brand == "Profilo" %}
+		Marka:"Profilo"
+		{% elif selected_brand == "Navitech" %}
+		Marka:"Navitech"
+		{% elif selected_brand == "Premier" %}
+		Marka:"Premier"
+		{% elif selected_brand == "SHARP" %}
+		Marka:"Sharp"
+		{% elif selected_brand == "Hisense" %}
+		Marka:"Hisense"
+		{% elif selected_brand == "Next" %}
+		Marka:"Next"
+		{% elif selected_brand == "TELENOVA-RONAX" %}
+		Marka:"Telenova-Ronax"
+		{% elif selected_brand == "Panasonic" %}
+		Marka:"Panasonic"
+		{% elif selected_brand == "YUMATU" %}
+		Marka:"Yumatu"
+		{% elif selected_brand == "CHIMEI-INNOLUX" %}
+		Marka:"Chimei-Innolux"
+		{% elif selected_brand == "WDX" %}
+		Marka:"WDX"
+		{% elif selected_brand == "PANDA" %}
+		Marka:"Panda"
+		{% elif selected_brand == "PHILIPS" %}
+		Marka:"Philips"
+		{% elif selected_brand == "ONVO-SABA" %}
+		Marka:"Onvo-Saba"
+		{% elif selected_brand == "NEMU" %}
+		Marka:"Nemu"
+		{% elif selected_brand == "REDLINE" %}
+		Marka:"Redline"
+		{% elif selected_brand == "Exper" %}
+		Marka:"Exper"
+		{% elif selected_brand == "DARFON" %}
+		Marka:"Darfon"
+		{% endif %}
+
+
+      {% if selected_category == "12" %}
+      Kategori:"Arçelik-Beko-Grundig Anakart"
+      {% elif selected_category == "13" %}
+      Kategori:"Arçelik-Beko-Grundig Powerboard"
+			{% elif selected_category == "1" %}
+      Kategori:"Vestel-Toshiba Anakart"
+			{% elif selected_category == "14" %}
+      Kategori:"Vestel-Toshiba Powerboard"
+			{% elif selected_category == "2" %}
+      Kategori:"Samsung Anakart"
+			{% elif selected_category == "7" %}
+      Kategori:"Samsung Powerboard"
+			{% elif selected_category == "10" %}
+      Kategori:"Samsung T-con"
+			{% elif selected_category == "34" %}
+			Kategori:"Samsung Inverter Board"
+			{% elif selected_category == "33" %}
+			Kategori:"Samsung Led Driver Board"
+			{% elif selected_category == "4" %}
+			Kategori:"LG Anakart"
+			{% elif selected_category == "8" %}
+			Kategori:"LG Powerboard"
+			{% elif selected_category == "11" %}
+			Kategori:"LG T-con"
+			{% elif selected_category == "21" %}
+			Kategori:"LG Inverter Board"
+			{% elif selected_category == "22" %}
+			Kategori:"LG Led Driver Board"
+			{% elif selected_category == "26" %}
+			Kategori:"Philips Anakart"
+			{% elif selected_category == "27" %}
+			Kategori:"Philips Powerboard"
+			{% elif selected_category == "5" %}
+			Kategori:"Sony Anakart"
+			{% elif selected_category == "6" %}
+			Kategori:"Sony Powerboard"
+			{% elif selected_category == "3" %}
+			Kategori:"Sunny-Axen Anakart"
+			{% elif selected_category == "31" %}
+			Kategori:"Sunny-Axen Uydu Alıcı Modül"
+			{% elif selected_category == "18" %}
+			Kategori:"Sanyo-Nordmende Anakart"
+			{% elif selected_category == "20" %}
+			Kategori:"Awox Anakart"
+			{% elif selected_category == "23" %}
+			Kategori:"Yumatu Anakart"
+			{% elif selected_category == "16" %}
+			Kategori:"Djitsu Anakart"
+			{% elif selected_category == "28" %}
+			Kategori:"Profilo Anakart"
+			{% elif selected_category == "29" %}
+			Kategori:"Onvo-Saba Anakart"
+			{% elif selected_category == "24" %}
+			Kategori:"Premier Anakart"
+			{% elif selected_category == "9" %}
+			Kategori:"AUO T-con"
+			{% elif selected_category == "25" %}
+			Kategori:"Diğer Anakart"
+			{% elif selected_category == "19" %}
+			Kategori:"Diğer Powerboard"
+			{% elif selected_category == "17" %}
+			Kategori:"Diğer T-con Board"
+			{% elif selected_category == "15" %}
+			Kategori:"Diğer Inverter Board"
+			{% elif selected_category == "30" %}
+			Kategori:"Diğer Led Driver Board"
+			{% elif selected_category == "32" %}
+			Kategori:"FR-FRC-FRCM Tv Board"
+			{% elif selected_category == "35" %}
+			Kategori:"Tv Speaker (Hoparlör)"
+			{% elif selected_category == "36" %}
+			Kategori:"Monitör Board"
+			{% elif selected_category == "38" %}
+			Kategori:"Y-Sus Board"
+			{% elif selected_category == "37" %}
+			Kategori:"Z-Sus Board"
+			{% elif selected_category == "39" %}
+			Kategori:"Buffer Board"
+      {% endif %}
+
+- Engin Elektronik
+
+{% endwith %}
+{% endwith %}
+
+{% endif %}
+{% endblock %}
+{% block robots %}noindex, nofollow{% endblock %}
+{% block content %}
+
+<!-- gelişmiş arama yap -->
+					<div class="container mt-1 mb-1">
+<svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1 inline"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+Filtreye Göre Ara:<button data-popover-target="popover-right" class="focus:outline-none" data-popover-placement="right" type="button"><svg class="w-4 h-4 ml-2 text-gray-400 hover:text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg></button>
+<div data-popover id="popover-right" role="tooltip" class="w-36 absolute z-10 invisible inline-block text-sm font-light text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400">
+  <h2 class="text-sm text-gray-900 dark:text-white">Marka,Kategori veya fiyata göre arama yapılabilir.</h2>
+    <div data-popper-arrow></div>
+</div>
+
+        <form method="GET" action="{% url 'filter_results' %}" onsubmit="return checkSelect(event)">
+	<div class="col-lg col-sm col-md col-6 flex-grow-0 mt-1">
+
+		<span class="ml-1">Marka:</span>
+	<!--	 {{ myFilter.form.brand }} -->
+	<select name="brand" id="select1" class="bg-zinc-100 rounded h-6 ml-1">
+		  <option value="" selected="">---------</option>
+		  <option value="AWOX">Awox</option>
+			<option value="SONY">Sony</option>
+			<option value="SAMSUNG">Samsung</option>
+			<option value="SUNNY">Sunny</option>
+			<option value="BOE">BOE</option>
+			<option value="LG">LG</option>
+			<option value="TOSHIBA">Toshiba</option>
+			<option value="AUO">Auo</option>
+			<option value="VESTEL">Vestel</option>
+			<option value="Arçelik-Beko-Grundig">Arçelik-Beko-Grundig</option>
+			<option value="DIJITSU">Dijitsu</option>
+		  <option value="SANYO-NORDMENDE">Sanyo-Nordmende</option>
+		  <option value="SUNNY-AXEN-WOON-SHEEN">Sunny-Axen-Woon-Sheen</option>
+		  <option value="Profilo">Profilo</option>
+		  <option value="Navitech">Navitech</option>
+		  <option value="Premier">Premier</option>
+		  <option value="SHARP">Sharp</option>
+		  <option value="Hisense">Hisense</option>
+		  <option value="Next">Next</option>
+		  <option value="TELENOVA-RONAX">Telenova-Ronax</option>
+		  <option value="Panasonic">Panasonic</option>
+		  <option value="YUMATU">Yumatu</option>
+		  <option value="CHIMEI-INNOLUX">Chimei-Innolux</option>
+			<option value="WDX">WDX</option>
+		  <option value="PANDA">Panda</option>
+		  <option value="PHILIPS">Philips</option>
+		  <option value="ONVO-SABA">Onvo-Saba</option>
+		  <option value="NEMU">Nemu</option>
+			<option value="REDLINE">Redline</option>
+			<option value="Exper">Exper</option>
+			<option value="DARFON">Darfon</option>
+			</select>
+
+		<span class="ml-1">Kategori:</span>
+	 <!--   {{ myFilter.form.category }} -->
+	 		<select name="category" id="select2" class="bg-zinc-100 rounded h-6 ml-1">
+		<option value="" selected="">---------</option>
+		<option value="12">Arçelik-Beko-Grundig Anakart</option>
+		<option value="13">Arçelik-Beko-Grundig Powerboard</option>
+	  <option value="1">Vestel-Toshiba Anakart</option>
+		<option value="14">Vestel-Toshiba Powerboard</option>
+	  <option value="2">Samsung Anakart</option>
+		<option value="7">Samsung Powerboard</option>
+		<option value="10">Samsung T-con</option>
+		<option value="34">Samsung Inverter Board</option>
+		<option value="33">Samsung Led Driver Board</option>
+		<option value="4">LG Anakart</option>
+		<option value="8">LG Powerboard</option>
+		<option value="11">LG T-con</option>
+		<option value="21">LG Inverter Board</option>
+		<option value="22">LG Led Driver Board</option>
+		<option value="26">Philips Anakart</option>
+		<option value="27">Philips Powerboard</option>
+		<option value="5">Sony Anakart</option>
+		<option value="6">Sony Powerboard</option>
+	  <option value="3">Sunny-Axen Anakart</option>
+		<option value="31">Sunny-Axen Uydu Alıcı Modül</option>
+		<option value="18">Sanyo-Nordmende Anakart</option>
+		<option value="20">Awox Anakart</option>
+	  <option value="23">Yumatu Anakart</option>
+		<option value="16">Djitsu Anakart</option>
+		<option value="28">Profilo Anakart</option>
+		<option value="29">Onvo-Saba Anakart</option>
+		<option value="24">Premier Anakart</option>
+	  <option value="9">AUO T-con</option>
+	  <option value="25">Diğer Anakart</option>
+		<option value="19">Diğer Powerboard</option>
+		<option value="17">Diğer T-con Board</option>
+	  <option value="15">Diğer Inverter Board</option>
+		<option value="30">Diğer Led Driver Board</option>
+	  <option value="32">FR-FRC-FRCM Tv Board</option>
+		<option value="35">Tv Speaker (Hoparlör)</option>
+		<option value="36">Monitör Board</option>
+		<option value="38">Y-Sus Board</option>
+		<option value="37">Z-Sus Board</option>
+		<option value="39">Buffer Board</option>
+			</select>
+
+			<span class="ml-1">Fiyat:</span>
+	<select name="price_range" id="select3" class="bg-zinc-100 rounded h-6 ml-1">
+			<option value="" selected="">---------</option>
+			<option value="100-300">100 - 300 TL</option>
+			<option value="300-500">300 - 500 TL</option>
+			<option value="500-1000">500 - 1000 TL</option>
+			<option value="1000-2000">1000 TL ve üzeri &nbsp;</option>
+	</select>
+
+		<button class="btn bg-gray-200 hover:bg-zinc-300 mt-1 ml-1" type="submit" onclick="return checkSelect(event)">Filtreyi Ara</button>
+		</div>
+            </form>
+</div>
+<!-- ========================= SECTION CONTENT ========================= -->
+<section class="section-content padding-y bg-zinc-50" style="padding-top:10px">
+<div class="container">
+<div class="row">
+
+	<aside class="col-md-3 md:flex lg:flex" style="margin-left: -15px;">
+<div class="flex card w-80 rounded-xl border-8 border-white mt-2" style="height:1530px;">
+	<article class="filter-group">
+		<header class="card-header">
+			<i class="icon-control fa fa-list"></i>
+				<h6 class="text-md font-bold text-blue-600">Kategoriler</h6>
+		</header>
+		<div class="filter-content show" id="collapse_1">
+			<div class="card-body pl-1.5" style="margin-top: -15px; margin-left: -3px">
+				<ul class="list-menu">
+					<!-- kategoriler>
+			{% for category in links %}
+ <li class="mt-3">
+	 <a href="{{ category.get_url }}" class="ml-3">{{ category.category_name }}</a>
+ </li>
+		 {% endfor %}
+		 <-->
+		 <li class="mt-3">
+			 <a href="/category/arcelik-beko-grundig-anakart/" class="ml-3">Arçelik-Beko-Grundig Anakart</a>
+		 </li>
+		 <li class="mt-3">
+			 <a href="/category/arcelik-beko-grundig-powerboard/" class="ml-3">Arçelik-Beko-Grundig Powerboard</a>
+		 </li>
+		 <li class="mt-3">
+		 <a href="/category/vestel-anakart/" class="ml-3">Vestel-Toshiba Anakart</a>
+		 </li>
+		 <li class="mt-3">
+		 <a href="/category/vestel-powerboard/" class="ml-3">Vestel-Toshiba Powerboard</a>
+		 </li>
+		 <li class="mt-3">
+		 <a href="/category/samsung-anakart/" class="ml-3">Samsung Anakart</a>
+		 </li>
+		 <li class="mt-3">
+		 <a href="/category/samsung-powerboard/" class="ml-3">Samsung Powerboard</a>
+		 </li>
+		 <li class="mt-3">
+		 <a href="/category/samsung-t-con/" class="ml-3">Samsung T-con</a>
+		 </li>
+		 <li class="mt-3">
+		 <a href="/category/samsung-inverter-board/" class="ml-3">Samsung Inverter Board</a>
+		 </li>
+		 <li class="mt-3">
+		 <a href="/category/samsung-led-driver-board/" class="ml-3">Samsung Led Driver Board</a>
+		 </li>
+		 <li class="mt-3">
+		 <a href="/category/lg-anakart/" class="ml-3">LG Anakart</a>
+		 </li>
+		 <li class="mt-3">
+		 <a href="/category/lg-powerboard/" class="ml-3">LG Powerboard</a>
+		 </li>
+		 <li class="mt-3">
+		 <a href="/category/lg-t-con/" class="ml-3">LG T-con</a>
+		 </li>
+		 <li class="mt-3">
+		 <a href="/category/lg-inverter-board/" class="ml-3">LG Inverter Board</a>
+		 </li>
+		 <li class="mt-3">
+		 <a href="/category/lg-led-driver-board/" class="ml-3">LG Led Driver Board</a>
+		 </li>
+		 <li class="mt-3">
+		 <a href="/category/philips-anakart/" class="ml-3">Philips Anakart</a>
+		 </li>
+		 <li class="mt-3">
+		 <a href="/category/philips-powerboard/" class="ml-3">Philips Powerboard</a>
+		 </li>
+		 <li class="mt-3">
+		 <a href="/category/sony-anakart/" class="ml-3">Sony Anakart</a>
+		 </li>
+		 <li class="mt-3">
+		 <a href="/category/sony-powerboard/" class="ml-3">Sony Powerboard</a>
+		 </li>
+		 <li class="mt-3">
+		 <a href="/category/sunny-anakart/" class="ml-3">Sunny-Axen Anakart</a>
+		 </li>
+		 <li class="mt-3">
+		 <a href="/category/uydu-alici-modul/" class="ml-3">Sunny-Axen Uydu Alıcı Modül</a>
+		 </li>
+		 <li class="mt-3">
+		 <a href="/category/sanyo-nordmende-anakart/" class="ml-3">Sanyo-Nordmende Anakart</a>
+		 </li>
+		 <li class="mt-3">
+		 <a href="/category/awox-anakart/" class="ml-3">Awox Anakart</a>
+		 </li>
+		 <li class="mt-3">
+		 <a href="/category/yumatu-anakart/" class="ml-3">Yumatu Anakart</a>
+		 </li>
+		 <li class="mt-3">
+		 <a href="/category/djitsu-anakart/" class="ml-3">Djitsu Anakart</a>
+		 </li>
+		 <li class="mt-3">
+		 <a href="/category/profilo-anakart/" class="ml-3">Profilo Anakart</a>
+		 </li>
+		 <li class="mt-3">
+		 <a href="/category/onvo-anakart/" class="ml-3">Onvo-Saba Anakart</a>
+		 </li>
+		 <li class="mt-3">
+		 <a href="/category/premier-anakart/" class="ml-3">Premier Anakart</a>
+		 </li>
+		 <li class="mt-3">
+		 <a href="/category/auo-t-con/" class="ml-3">AUO T-con</a>
+		 </li>
+		 <li class="mt-3">
+		 <a href="/category/diger-anakart/" class="ml-3">Diğer Anakart</a>
+		 </li>
+		 <li class="mt-3">
+		 <a href="/category/diger-powerboard/" class="ml-3">Diğer Powerboard</a>
+		 </li>
+		 <li class="mt-3">
+		 <a href="/category/diger-t-con-board/" class="ml-3">Diğer T-con Board</a>
+		 </li>
+		 <li class="mt-3">
+		 <a href="/category/inverter-board/" class="ml-3">Diğer Inverter Board</a>
+		 </li>
+		 <li class="mt-3">
+		 <a href="/category/diger-led-driver-board/" class="ml-3">Diğer Led Driver Board</a>
+		 </li>
+		 <li class="mt-3">
+		 <a href="/category/fr-tv-board/" class="ml-3">FR-FRC-FRCM Tv Board</a>
+		 </li>
+		 <li class="mt-3">
+		 <a href="/category/tv-speaker-hoparlor/" class="ml-3">Tv Speaker (Hoparlör)</a>
+		 </li>
+		 <li class="mt-3">
+		 <a href="/category/monitor-kartlari/" class="ml-3">Monitör Board</a>
+		 </li>
+		 <li class="mt-3">
+		 <a href="/category/y-sus-board/" class="ml-3">Y-Sus Board</a>
+		 </li>
+		 <li class="mt-3">
+		 <a href="/category/z-sus-board/" class="ml-3">Z-Sus Board</a>
+		 </li>
+		 <li class="mt-3">
+		 <a href="/category/buffer-board/" class="ml-3">Buffer Board</a>
+		 </li>
+				</ul>
+			</div>
+		</div>
+	</article>
+</div>
+	</aside> <!-- col.// -->
+
+	<main class="col-md-9">
+
+<header class="mb-4 pb-1 rounded-lg border-white border-8 bg-white"> <!--header arama sonucu -->
+		<ul class="breadcrumb mt-2 ml-3">
+{% if categories %}
+  <li class="active"><a href="{% url 'home'  %}">Anasayfa&nbsp;</a></li>
+	<svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="9 18 15 12 9 6"></polyline></svg>&nbsp;
+	<li class="font-semibold">{{ categories }}</li>&nbsp;({{ product_count }}) sonuç&nbsp;bulundu.
+	{% elif product_count > 0 %}
+	<li>Arama sonucu: <b>"{{ search_query }}"</b> içeren <b>({{product_count}})</b> adet sonuç bulundu.</li>
+	{% elif myFilter.form.brand.value and myFilter.form.category.value %}
+	<li>Marka'ya göre <b class="no-click" style="pointer-events: none;">"{{ myFilter.form.brand }}"</b> Kategori'ye göre <b class="no-click" style="pointer-events: none;">"{{ myFilter.form.category }}"</b> <br>çıkan filtre sonucu:</li>
+	{% elif myFilter.form.brand.value %}
+	<li>Marka'ya göre çıkan filtre sonucu: <b class="no-click" style="pointer-events: none;">"{{ myFilter.form.brand }}"</b></li>
+	{% elif myFilter.form.category.value %}
+	<li>Kategori'ye göre çıkan filtre sonucu: <b class="no-click" style="pointer-events: none;">"{{ myFilter.form.category }}"</b></li>
+	{% elif search_query is None %}
+	{% else %}
+	<li>Aradığınız <b>"{{ search_query }}"</b>  sonucu bulunamadı. </li>
+{% endif %}
+</ul>
+</header> <!--/header arama sonucu -->
+
+
+<nav class="mb-7" aria-label="Page navigation sample"> <!-- üst paginator -->
+	{% if products.has_other_pages %}
+  <ul class="pagination">
+		{% for i in products.paginator.page_range %}
+		{% if products.number == i %}
+    <li class="page-item active"><span class="page-link">{{ i }}</span></li>
+		{% else %}
+		<li class="page-item"><a class="page-link" href="?page={{i}}">{{ i }}</a></li>
+		{% endif %}
+		{% endfor %}
+  </ul>
+		{% endif %}
+</nav> <!-- üst paginator // -->
+
+
+
+
+
+<div class="row sagsol mb-12 ml-2" style="margin-top: -10px;"><!--ürün -->
+	{% if products %}
+	{% for product in products %}
+	<div class="col-md-4">
+		<figure class="card card-product-grid rounded border-0">
+			<div class="img-wrap">
+				<a href="{{ product.get_absolute_url }}" target="_blank" aria-label="">
+					<img src="{{ product.webp.url }}" class="rounded" style="height:90%; width:auto;" alt="">
+				</a>
+				{% if product.yeni %}
+<span class="badge  badge-danger badge-yeni" style="font-size:11px; margin-left: 243px; margin-top:-3px">&nbsp;{{product.yeni}}&nbsp;</span>
+				{% endif %}
+			</div>
+			<figcaption class="info-wrap">
+				<div class="fix-height">
+					<div class="mt-56 -ml-2 badge badge-pill badge-light hover:bg-gray-300">
+					<a href="{{ product.category.get_url }}" class="-mt-5 font-semibold hover:text-gray-700">{{ product.category }}</a>
+					</div>
+					<span class="badge badge-light  w-12 stok" style="font-size:11px;">{{product.stock}} Adet</span>
+					<a href="{{ product.get_absolute_url }}" target="_blank" class="title mt-4">{{ product.product_name }}</a>
+				</div>
+							</figcaption>
+							<div class="col">
+				<span class="price text-lg" style="margin-right: 70px;">{{ product.price }}&nbsp;</span>
+				<span style="margin-left:-78px">₺</span>
+	</div>
+		</figure>
+	</div>
+	{% endfor %}
+</div> <!-- ürün.// -->
+
+{% else %}
+<img src="{% static 'images/notfound.png' %}" style="margin-left: 30px; margin-top: -20px;" alt=""></img>
+sonuç bulunamadı
+</div>
+ {% endif %}
+
+ <nav class="mt-4" aria-label="Page navigation sample"> <!-- alt paginator -->
+ 	{% if products.has_other_pages %}
+   <ul class="pagination">
+ 		{% for i in products.paginator.page_range %}
+ 		{% if products.number == i %}
+     <li class="page-item active"><span class="page-link">{{ i }}</span></li>
+ 		{% else %}
+ 		<li class="page-item"><a class="page-link" href="?page={{i}}">{{ i }}</a></li>
+ 		{% endif %}
+ 		{% endfor %}
+   </ul>
+ 		{% endif %}
+ </nav> <!-- alt paginator // -->
+</div>
+
+<!--yukarı -->
+<a href="#" class="bas" aria-label="yukarı çık" style="width:45px; height:45px; display:none; background-color: #a1d5e3; border-radius: 50px; box-shadow: 0 2px 8px 0 rgb(0 0 0 / 15%); position:fixed; padding:8px; z-index:100; right:0; bottom:0; margin-bottom: 10px; margin-right:3px; opacity:0.9;">
+<svg viewBox="0 0 24 24" width="55" height="35" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1 -ml-3.5 -mt-1"><polyline points="18 15 12 9 6 15"></polyline></svg>
+</a> <!-- yukarı // -->
+
+</section>
+{% endblock %}

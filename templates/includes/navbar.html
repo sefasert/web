@@ -1,0 +1,173 @@
+{% load static %}
+<header class="section-header">
+<nav class="navbar p-md-0 navbar-expand-sm border-bottom"><!-- iletisim -->
+  <div class="hidden navbar-collapse justify-end mr-3 mt-2 mb-2"> <!-- masaüstünde gizle toogle'ı -->
+{% for ayarlar in ayarlar %}
+  <span class="flex-shrink-0"><svg viewBox="0 0 24 24" width="16" height="20" stroke="black" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1 inline fill-black"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+      <a href="https://wa.me/905451973471" target="_blank">{{ ayarlar.telefon }}</a>&nbsp;</span>
+    <span class="flex-shrink-0"><svg viewBox="0 0 24 24" width="22" height="18" stroke="black" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1 inline fill-black"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+      <a href="https://yandex.com.tr/harita/org/engin_elektronik_tv_hastanesi/233111245126/?ll=28.854444%2C41.060329&z=16" target="_blank">
+        {{ ayarlar.adres }}</a></span>
+      <span class="ml-1 flex-shrink-0"><svg viewBox="0 0 24 24" width="22" height="22" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1 inline fill-zinc-700 -mt-1"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        {{ ayarlar.saat }}</span>
+{% endfor %}
+  </div>  <!-- /masaüstünde gizle toogle'ı -->
+  <div class="sm:hidden">   <!-- toogle mobilde göster -->
+  <button class="mobile-menu-button p-2 -mt-1 ml-1 border rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 focus:bg-gray-100 dark:focus:bg-gray-800 focus:outline-none" aria-label="iletişim">
+  <svg class="w-6 h-6 text-gray-500" x-show="!showMenu" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+  </button>
+    <div class="hidden mobile-menu ml-1"> <!-- mobilde gözüken toogle'ın iletişimini aç-kapa -->
+      <div class="navbar-collapse mx-auto justify-end mt-2">
+      {% for ayarlar in ayarlar %}
+      <span class="-ml-2"><svg viewBox="0 0 24 24" width="16" height="20" stroke="black" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1 inline fill-black"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><a href="https://wa.me/905451973471" target="_blank"> {{ ayarlar.telefon }}</a>&nbsp;&nbsp;</span>
+
+      <a class="nav-link -ml-7" href="https://yandex.com.tr/harita/org/engin_elektronik_tv_hastanesi/233111245126/?ll=28.854444%2C41.060329&z=16" target="_blank">
+      <svg viewBox="0 0 24 24" width="22" height="18" stroke="black" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1 inline fill-black"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>{{ ayarlar.adres }}</a>
+
+      <span class="-ml-3"><svg viewBox="0 0 24 24" width="22" height="22" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1 inline fill-zinc-700 -mt-1"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>{{ ayarlar.saat }}</span>
+      {% endfor %}
+      </div>
+    </div>  <!-- /mobilde gözüken toogle'ın iletişimini aç-kapa -->
+  </div>    <!-- /toogle mobilde göster -->
+</nav><!-- iletisim// -->
+
+<section class="mt-3 mb-3">
+  <div class="container flex-row">
+<div class="row align-items-center">
+
+  <div class="flex flex-wrap ml-3"><!-- anasayfa buton -->
+    <div class="category-wrap dropdown">
+<a href="{% url 'home' %}" class="btn btn-outline-primary hover:bg-blue-600 -ml-1 flex items-center">
+  <span class="-ml-0.5 mt-0.5">Engin Elektronik</span>
+</a>
+    </div>
+  </div> <!-- anasayfa buton// -->
+
+<div class="flex flex-wrap ml-3"> <!-- kategoriler buton -->
+    <button id="dropdownDefault" data-toggle="dropdown"  class="text-white bg-blue-600 hover:bg-blue-700  focus:outline-none font-medium rounded  px-3 py-2  inline-flex items-center -ml-1" type="button">
+      <span class="-ml-1">Kategoriler</span>
+      <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+    </button>
+  <div class="dropdown-menu">
+    <!-- KATEGORİLER >
+    {% for category in links %}
+    <a class="dropdown-item" href="{{ category.get_url }}">
+      <span class="-ml-4">{{ category.category_name }}</span>
+    </a>
+    {% endfor %}
+    <-->
+    <a class="dropdown-item" href="/category/arcelik-beko-grundig-anakart/">
+      <span class="-ml-4">Arçelik-Beko-Grundig Anakart</span></a>
+      <a class="dropdown-item" href="/category/arcelik-beko-grundig-powerboard/">
+      <span class="-ml-4">Arçelik-Beko-Grundig Powerboard</span></a>
+      <a class="dropdown-item" href="/category/vestel-anakart/">
+      <span class="-ml-4">Vestel-Toshiba Anakart</span></a>
+      <a class="dropdown-item" href="/category/vestel-powerboard/">
+      <span class="-ml-4">Vestel-Toshiba Powerboard</span></a>
+      <a class="dropdown-item" href="/category/samsung-anakart/">
+      <span class="-ml-4">Samsung Anakart</span></a>
+      <a class="dropdown-item" href="/category/samsung-powerboard/">
+      <span class="-ml-4">Samsung Powerboard</span></a>
+      <a class="dropdown-item" href="/category/samsung-t-con/">
+      <span class="-ml-4">Samsung T-con</span></a>
+      <a class="dropdown-item" href="/category/samsung-inverter-board/">
+      <span class="-ml-4">Samsung Inverter Board</span></a>
+      <a class="dropdown-item" href="/category/samsung-led-driver-board/">
+      <span class="-ml-4">Samsung Led Driver Board</span></a>
+      <a class="dropdown-item" href="/category/lg-anakart/">
+      <span class="-ml-4">LG Anakart</span></a>
+      <a class="dropdown-item" href="/category/lg-powerboard/">
+      <span class="-ml-4">LG Powerboard</span></a>
+      <a class="dropdown-item" href="/category/lg-t-con/">
+      <span class="-ml-4">LG T-con</span></a>
+      <a class="dropdown-item" href="/category/lg-inverter-board/">
+      <span class="-ml-4">LG Inverter Board</span></a>
+      <a class="dropdown-item" href="/category/lg-led-driver-board/">
+      <span class="-ml-4">LG Led Driver Board</span></a>
+      <a class="dropdown-item" href="/category/philips-anakart/">
+      <span class="-ml-4">Philips Anakart</span></a>
+      <a class="dropdown-item" href="/category/philips-powerboard/">
+      <span class="-ml-4">Philips Powerboard</span></a>
+      <a class="dropdown-item" href="/category/sony-anakart/">
+      <span class="-ml-4">Sony Anakart</span></a>
+      <a class="dropdown-item" href="/category/sony-powerboard/">
+      <span class="-ml-4">Sony Powerboard</span></a>
+      <a class="dropdown-item" href="/category/sunny-anakart/">
+      <span class="-ml-4">Sunny-Axen Anakart</span></a>
+      <a class="dropdown-item" href="/category/uydu-alici-modul/">
+      <span class="-ml-4">Sunny-Axen Uydu Alıcı Modül</span></a>
+      <a class="dropdown-item" href="/category/sanyo-nordmende-anakart/">
+      <span class="-ml-4">Sanyo-Nordmende Anakart</span></a>
+      <a class="dropdown-item" href="/category/awox-anakart/">
+      <span class="-ml-4">Awox Anakart</span></a>
+      <a class="dropdown-item" href="/category/yumatu-anakart/">
+      <span class="-ml-4">Yumatu Anakart</span></a>
+      <a class="dropdown-item" href="/category/djitsu-anakart/">
+      <span class="-ml-4">Dijitsu Anakart</span></a>
+      <a class="dropdown-item" href="/category/profilo-anakart/">
+      <span class="-ml-4">Profilo Anakart</span></a>
+      <a class="dropdown-item" href="/category/onvo-anakart/">
+      <span class="-ml-4">Onvo-Saba Anakart</span></a>
+      <a class="dropdown-item" href="/category/premier-anakart/">
+      <span class="-ml-4">Premier Anakart</span></a>
+      <a class="dropdown-item" href="/category/auo-t-con/">
+      <span class="-ml-4">AUO T-con</span></a>
+      <a class="dropdown-item" href="/category/diger-anakart/">
+      <span class="-ml-4">Diğer Anakart</span></a>
+      <a class="dropdown-item" href="/category/diger-powerboard/">
+      <span class="-ml-4">Diğer Powerboard</span></a>
+      <a class="dropdown-item" href="/category/diger-t-con-board/">
+      <span class="-ml-4">Diğer T-con Board</span></a>
+      <a class="dropdown-item" href="/category/inverter-board/">
+      <span class="-ml-4">Diğer Inverter Board</span></a>
+      <a class="dropdown-item" href="/category/diger-led-driver-board/">
+      <span class="-ml-4">Diğer Led Driver Board</span></a>
+      <a class="dropdown-item" href="/category/fr-tv-board/">
+      <span class="-ml-4">FR-FRC-FRCM Tv Board</span></a>
+      <a class="dropdown-item" href="/category/tv-speaker-hoparlor/">
+      <span class="-ml-4">Tv Speaker (Hoparlör)</span></a>
+      <a class="dropdown-item" href="/category/monitor-kartlari/">
+      <span class="-ml-4">Monitör Board</span></a>
+      <a class="dropdown-item" href="/category/y-sus-board/">
+      <span class="-ml-4">Y-Sus Board</span></a>
+      <a class="dropdown-item" href="/category/z-sus-board/">
+      <span class="-ml-4">Z-Sus Board</span></a>
+      <a class="dropdown-item" href="/category/buffer-board/">
+      <span class="-ml-4">Buffer Board</span></a>
+  </div>
+  </div> <!-- kategoriler buton// -->
+
+  <div class="col-lg col-md-6 col-sm-12 col"><!-- search -->
+    <form action="{% url 'search' %}" class="search" method="GET" onsubmit="return validateSearch(event)">
+      <div class="input-group">
+        <input type="search" name="keyword" id="anahtar" autocomplete="off" class="form-control p-4 rounded-lg font-normal text-md bg-zinc-100 border-2 border-zinc-100 placeholder-zinc-400 focus:shadow-lg focus:dark:!border-zinc-600 focus:border-zinc-100 ui-autocomplete-input" placeholder="ürün ara">
+        <button type="submit" class="btn absolute z-10 rounded-lg px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white  right-2 bottom-1" aria-label="arama butonu">Ara</button>
+        </div>
+        </form>
+        </div> <!-- search -->
+
+  <div class="col-lg-3 col-sm-6 col-8 order-2 order-lg-3"> <!-- login/register -->
+        <div class="d-flex justify-content-end mb-3 mb-lg-0">
+          {% if user.id is None %}
+          <div class="widget-header mt-3">
+            <small class="text-sm">Hoşgeldin Ziyaretçi</small>
+          </div>
+          {% else %}
+          <div class="widget-header mt-1.5">
+          {{ user.first_name }} {{user.last_name}}
+            <div>
+              <a href="{% url 'logout' %}">Çıkış Yap</a>
+            </div>
+          </div>
+          {% endif %}
+            <div class="icon icon-sm rounded-circle border ml-1 mt-1">
+              <svg viewBox="0 0 24 24" width="22" height="18" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1 inline fill-white"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+            </div>
+        </div>
+      </div> <!-- login/register -->
+
+</div> <!-- row.// -->
+  </div> <!-- container.// -->
+</section> <!-- header-main .// -->
+</header> <!-- section-header.// -->

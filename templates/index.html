@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+{% load static %}
+{% block description %}Adres: 100. Yıl Mah. 2154. Sok. No:3 Bağcılar/İstanbul - Telefon: (0545)197-3471 2.el tv, tv kartı, kumanda, tv ayağı, tv aparatı ve tv ürünlerinin satıldığı-tamir edildiği yer{% endblock %}
+{% block keywords %}engin elektronik,engin elektronik bağcılar,engin elektronik istanbul,tv anakart,tv besleme kart,tv tcon,samsung anakart,lg anakart,sunny anakart,vestel anakart,2.el tv, tv tamir{% endblock %}
+{% block title %}Engin Elektronik - Tv Hastanesi{% endblock %}
+{% block content %}
+<section class="section-pagetop bg-zinc-50 mt-3"> <!-- section -->
+<div class="container"><!-- container -->
+	<div class="row"> <!-- row -->
+		<aside class="col-md-3 md:flex lg:flex" style="margin-left: -25px;"> <!-- sol kategori -->
+			<div class="flex card w-80 rounded-xl border-8 border-zinc-50 mt-2" style="height:1530px;">
+				<article class="filter-group">
+					<header class="card-header">
+						<i class="icon-control fa fa-list"></i>
+							<h6 class="text-md font-bold text-blue-600">Kategoriler</h6>
+					</header>
+					<div class="filter-content show" id="collapse_1">
+						<div class="card-body pl-1.5" style="margin-top: -15px; margin-left: -3px">
+							<ul class="list-menu">
+								<!-- kategoriler>
+						{% for category in links %}
+			 <li class="mt-3">
+				 <a href="{{ category.get_url }}" class="ml-3">{{ category.category_name }}</a>
+			 </li>
+					 {% endfor %}
+					 <-->
+					 <li class="mt-3">
+						 <a href="/category/arcelik-beko-grundig-anakart/" class="ml-3">Arçelik-Beko-Grundig Anakart</a>
+					 </li>
+					 <li class="mt-3">
+						 <a href="/category/arcelik-beko-grundig-powerboard/" class="ml-3">Arçelik-Beko-Grundig Powerboard</a>
+					 </li>
+					 <li class="mt-3">
+					 <a href="/category/vestel-anakart/" class="ml-3">Vestel-Toshiba Anakart</a>
+					 </li>
+					 <li class="mt-3">
+					 <a href="/category/vestel-powerboard/" class="ml-3">Vestel-Toshiba Powerboard</a>
+					 </li>
+					 <li class="mt-3">
+					 <a href="/category/samsung-anakart/" class="ml-3">Samsung Anakart</a>
+					 </li>
+					 <li class="mt-3">
+					 <a href="/category/samsung-powerboard/" class="ml-3">Samsung Powerboard</a>
+					 </li>
+					 <li class="mt-3">
+					 <a href="/category/samsung-t-con/" class="ml-3">Samsung T-con</a>
+					 </li>
+					 <li class="mt-3">
+					 <a href="/category/samsung-inverter-board/" class="ml-3">Samsung Inverter Board</a>
+					 </li>
+					 <li class="mt-3">
+					 <a href="/category/samsung-led-driver-board/" class="ml-3">Samsung Led Driver Board</a>
+					 </li>
+					 <li class="mt-3">
+					 <a href="/category/lg-anakart/" class="ml-3">LG Anakart</a>
+					 </li>
+					 <li class="mt-3">
+					 <a href="/category/lg-powerboard/" class="ml-3">LG Powerboard</a>
+					 </li>
+					 <li class="mt-3">
+					 <a href="/category/lg-t-con/" class="ml-3">LG T-con</a>
+					 </li>
+					 <li class="mt-3">
+					 <a href="/category/lg-inverter-board/" class="ml-3">LG Inverter Board</a>
+					 </li>
+					 <li class="mt-3">
+					 <a href="/category/lg-led-driver-board/" class="ml-3">LG Led Driver Board</a>
+					 </li>
+					 <li class="mt-3">
+					 <a href="/category/philips-anakart/" class="ml-3">Philips Anakart</a>
+					 </li>
+					 <li class="mt-3">
+					 <a href="/category/philips-powerboard/" class="ml-3">Philips Powerboard</a>
+					 </li>
+					 <li class="mt-3">
+					 <a href="/category/sony-anakart/" class="ml-3">Sony Anakart</a>
+					 </li>
+					 <li class="mt-3">
+					 <a href="/category/sony-powerboard/" class="ml-3">Sony Powerboard</a>
+					 </li>
+					 <li class="mt-3">
+					 <a href="/category/sunny-anakart/" class="ml-3">Sunny-Axen Anakart</a>
+					 </li>
+					 <li class="mt-3">
+					 <a href="/category/uydu-alici-modul/" class="ml-3">Sunny-Axen Uydu Alıcı Modül</a>
+					 </li>
+					 <li class="mt-3">
+					 <a href="/category/sanyo-nordmende-anakart/" class="ml-3">Sanyo-Nordmende Anakart</a>
+					 </li>
+					 <li class="mt-3">
+					 <a href="/category/awox-anakart/" class="ml-3">Awox Anakart</a>
+					 </li>
+					 <li class="mt-3">
+					 <a href="/category/yumatu-anakart/" class="ml-3">Yumatu Anakart</a>
+					 </li>
+					 <li class="mt-3">
+					 <a href="/category/djitsu-anakart/" class="ml-3">Djitsu Anakart</a>
+					 </li>
+					 <li class="mt-3">
+					 <a href="/category/profilo-anakart/" class="ml-3">Profilo Anakart</a>
+					 </li>
+					 <li class="mt-3">
+					 <a href="/category/onvo-anakart/" class="ml-3">Onvo-Saba Anakart</a>
+					 </li>
+					 <li class="mt-3">
+					 <a href="/category/premier-anakart/" class="ml-3">Premier Anakart</a>
+					 </li>
+					 <li class="mt-3">
+					 <a href="/category/auo-t-con/" class="ml-3">AUO T-con</a>
+					 </li>
+					 <li class="mt-3">
+					 <a href="/category/diger-anakart/" class="ml-3">Diğer Anakart</a>
+					 </li>
+					 <li class="mt-3">
+					 <a href="/category/diger-powerboard/" class="ml-3">Diğer Powerboard</a>
+					 </li>
+					 <li class="mt-3">
+					 <a href="/category/diger-t-con-board/" class="ml-3">Diğer T-con Board</a>
+					 </li>
+					 <li class="mt-3">
+					 <a href="/category/inverter-board/" class="ml-3">Diğer Inverter Board</a>
+					 </li>
+					 <li class="mt-3">
+					 <a href="/category/diger-led-driver-board/" class="ml-3">Diğer Led Driver Board</a>
+					 </li>
+					 <li class="mt-3">
+					 <a href="/category/fr-tv-board/" class="ml-3">FR-FRC-FRCM Tv Board</a>
+					 </li>
+					 <li class="mt-3">
+					 <a href="/category/tv-speaker-hoparlor/" class="ml-3">Tv Speaker (Hoparlör)</a>
+					 </li>
+					 <li class="mt-3">
+					 <a href="/category/monitor-kartlari/" class="ml-3">Monitör Board</a>
+					 </li>
+					 <li class="mt-3">
+					 <a href="/category/y-sus-board/" class="ml-3">Y-Sus Board</a>
+					 </li>
+					 <li class="mt-3">
+					 <a href="/category/z-sus-board/" class="ml-3">Z-Sus Board</a>
+					 </li>
+					 <li class="mt-3">
+					 <a href="/category/buffer-board/" class="ml-3">Buffer Board</a>
+					 </li>
+							</ul>
+						</div>
+					</div>
+				</article>
+			</div>
+		</aside> <!-- sol kategori// -->
+
+<aside class="col-md-9"> <!-- ürünler ve yukarı çık -->
+     {% include 'list.html' %}
+<a href="#" class="bas" aria-label="yukarı çık" style="width:45px; height:45px; display:none; background-color: #a1d5e3; border-radius: 50px; box-shadow: 0 2px 8px 0 rgb(0 0 0 / 15%); position:fixed; padding:8px; z-index:100; right:0; bottom:0; margin-bottom: 10px; margin-right:3px; opacity:0.9;">
+<svg viewBox="0 0 24 24" width="55" height="35" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1 -ml-3.5 -mt-1"><polyline points="18 15 12 9 6 15"></polyline></svg></a> <!-- yukarı çık// -->
+</aside> <!-- ürünler ve yukarı çık// -->
+
+	</div> <!-- row // -->
+</div> <!-- container //  -->
+</section> <!-- section // -->
+{% endblock %}
