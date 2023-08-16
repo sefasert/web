@@ -20,6 +20,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
+
 CSRF_TRUSTED_ORIGINS = ["https://web-production-bcc5.up.railway.app", "http://testsite-production-62e4.up.railway.app"]
 
 SITE_ID = 6
